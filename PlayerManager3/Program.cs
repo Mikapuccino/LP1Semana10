@@ -35,6 +35,8 @@ namespace PlayerManager3
                 new Player("Best player ever", 100),
                 new Player("An even better player", 500)
             };
+
+            playerList.Sort();
         }
 
         /// <summary>
@@ -105,6 +107,7 @@ namespace PlayerManager3
 
             Player newPlayer = new Player(newName, newScore);
             playerList.Add(newPlayer);
+            playerList.Sort();
 
             Console.WriteLine($"{newName} successfully added");
         }
