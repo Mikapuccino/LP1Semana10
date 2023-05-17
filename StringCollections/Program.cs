@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StringCollections
 {
     class Program
-    {
+    {   
         static void Main(string[] args)
         {
             string string1 = "Ola";
@@ -13,32 +14,35 @@ namespace StringCollections
             string string5 = "world";
 
             // Create list with all strings
-            list = new List<string>() {string1,
+            List<string> list = new List<string>() {string1,
             string2,
             string3,
             string4,
             string5};
 
             // Create stack with all strings
-            stack = new Stack<string>() {string1,
-            string2,
-            string3,
-            string4,
-            string5};
+            Stack<string> stack = new Stack<string>();
+            stack.Push(string1);
+            stack.Push(string2);
+            stack.Push(string3);
+            stack.Push(string4);
+            stack.Push(string5);
 
             // Create queue with all strings
-            queue = new Queue<string>() {string1,
-            string2,
-            string3,
-            string4,
-            string5};
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue(string1);
+            queue.Enqueue(string2);
+            queue.Enqueue(string3);
+            queue.Enqueue(string4);
+            queue.Enqueue(string5);
 
             // Create hashset with all strings
-            hashset = new HashSet<string>() {string1,
-            string2,
-            string3,
-            string4,
-            string5};
+            HashSet<string> hashset = new HashSet<string>();
+            hashset.Add(string1);
+            hashset.Add(string2);
+            hashset.Add(string3);
+            hashset.Add(string4);
+            hashset.Add(string5);
 
             // Prints list
             Console.WriteLine("List: ");
