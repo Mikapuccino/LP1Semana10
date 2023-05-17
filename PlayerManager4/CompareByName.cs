@@ -7,19 +7,24 @@ namespace PlayerManager4
 {
     public class CompareByName : IComparer<Player>
     {
-        public boolean Order { get; }
-    }
+        public bool Order { get; }
 
-    public int Compare(Player first, Player second)
-    {
-        if (Order)
+        public CompareByName(bool order)
         {
-            return first.Name.CompareTo(second.Name);
+            Order = order;
         }
 
-        else if (!Order)
+        public int Compare(Player first, Player second)
         {
-            return second.Name.CompareTo(second.Name);
+            if (Order)
+            {
+                return first.Name.CompareTo(second.Name);
+            }
+
+            else if (!Order)
+            {
+                return second.Name.CompareTo(second.Name);
+            }
         }
     }
 }

@@ -37,6 +37,9 @@ namespace PlayerManager4
             };
 
             playerList.Sort();
+
+            IComparer<Player> alphaComp = new CompareByName(true);
+            IComparer<Player> antiAlphaComp = new CompareByName(false);
         }
 
         /// <summary>
@@ -67,6 +70,9 @@ namespace PlayerManager4
                         ListPlayersWithScoreGreaterThan();
                         break;
                     case "4":
+                        ChooseListingOption();
+                        break;
+                    case "5":
                         Console.WriteLine("Bye!");
                         break;
                     default:
@@ -92,7 +98,8 @@ namespace PlayerManager4
             Console.WriteLine("2. List all players");
             Console.WriteLine("3. List all players with a "
             + "score higher than given value");
-            Console.WriteLine("4. Exit program");
+            Console.WriteLine("4. Choose listing option");
+            Console.WriteLine("5. Exit program");
         }
 
         /// <summary>
@@ -170,6 +177,29 @@ namespace PlayerManager4
             }
 
             yield break;
+        }
+
+        private void ChooseListingOption()
+        {
+            Console.WriteLine("1. List by score");
+            Console.WriteLine("2. List by alphabetical order");
+            Console.WriteLine("3. List by reverse alphabetical order");
+
+            string listingOption = Console.ReadLine();
+
+            // Determine the option specified by the user and act on it
+            switch (listingOption)
+            {
+                case "1":
+                    playerList.Sort();
+                    break;
+                case "2":
+                    playerList.Sort(alphaComp);
+                    break;
+                case "3":
+                    playerList.Sort(antiAlphaComp);
+                    break;
+            }
         }
     }
 }
