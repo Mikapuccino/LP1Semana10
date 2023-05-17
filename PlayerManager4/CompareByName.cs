@@ -9,4 +9,17 @@ namespace PlayerManager4
     {
         public boolean Order { get; }
     }
+
+    public int Compare(Player first, Player second)
+    {
+        if (Order)
+        {
+            return first.Name.CompareTo(second.Name);
+        }
+
+        else if (!Order)
+        {
+            return second.Name.CompareTo(second.Name);
+        }
+    }
 }
