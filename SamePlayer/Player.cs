@@ -10,9 +10,15 @@ namespace SamePlayer
         public PlayerType Type { get; set; }
         public string Name { get; set; }
 
-        public override PlayerType GetHashCode()
+        public Player(PlayerType type, string name)
         {
-            return type;
+            Type = type;
+            Name = name;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name ^ this.Type;
         }
 
         public override bool Equals(Object obj)
@@ -24,6 +30,10 @@ namespace SamePlayer
             else if (obj is Player)
             {
                 return (obj.name == this.name) && (obj.type == this.type);
+            }
+            else
+            {
+                return false;
             }
         }
     }

@@ -9,9 +9,9 @@ namespace SamePlayer
         {
             HashSet<Player> setOfPlayers = new HashSet<Player>();
 
-            setOfPlayer.Add(Tank, "Ana");
-            setOfPlayer.Add(Slayer, "Paulo");
-            setOfPlayer.Add(Tank, "Ana");
+            setOfPlayers.Add(Tank, "Ana");
+            setOfPlayers.Add(Slayer, "Paulo");
+            setOfPlayers.Add(Tank, "Ana");
 
             foreach (Player p in setOfPlayers)
                 Console.WriteLine($"{p.Name} is a {p.Type}");
