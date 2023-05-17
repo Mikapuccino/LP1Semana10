@@ -23,7 +23,7 @@ namespace PlayerManager4
 
             else if (!Order)
             {
-                return second.Name.CompareTo(second.Name);
+                return -(first.Name.CompareTo(second.Name));
             }
 
             else
