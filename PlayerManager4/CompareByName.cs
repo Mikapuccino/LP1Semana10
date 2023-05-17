@@ -25,6 +25,11 @@ namespace PlayerManager4
             {
                 return second.Name.CompareTo(second.Name);
             }
+
+            else
+            {
+                return 0;
+            }
         }
     }
 }

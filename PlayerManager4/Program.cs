@@ -37,9 +37,6 @@ namespace PlayerManager4
             };
 
             playerList.Sort();
-
-            IComparer<Player> alphaComp = new CompareByName(true);
-            IComparer<Player> antiAlphaComp = new CompareByName(false);
         }
 
         /// <summary>
@@ -86,7 +83,7 @@ namespace PlayerManager4
                 Console.WriteLine("\n");
 
                 // Loop keeps going until players choses to quit (option 4)
-            } while (option != "4");
+            } while (option != "5");
         }
 
         /// <summary>
@@ -181,6 +178,9 @@ namespace PlayerManager4
 
         private void ChooseListingOption()
         {
+            IComparer<Player> alphaComp = new CompareByName(true);
+            IComparer<Player> antiAlphaComp = new CompareByName(false);
+            
             Console.WriteLine("1. List by score");
             Console.WriteLine("2. List by alphabetical order");
             Console.WriteLine("3. List by reverse alphabetical order");
