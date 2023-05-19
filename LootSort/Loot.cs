@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace LootSort
 {
     /// <summary>
@@ -48,7 +53,7 @@ namespace LootSort
 
             else if ((this.Kind == other.Kind) && (this.Value != other.Value))
             {
-                return other.Value - this.Value;
+                return (int)(other.Value - this.Value);
             }
             
             else return this.Description.CompareTo(other.Description);
