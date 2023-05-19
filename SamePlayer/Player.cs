@@ -23,17 +23,16 @@ namespace SamePlayer
 
         public override bool Equals(Object obj)
         {
-            if (obj == null)
+            Player otherPlayer = obj as Player;
+            
+            if (otherPlayer == null)
             {
                 return false;
-            }
-            else if (obj is Player)
-            {
-                return (obj.Name == this.Name) && (obj.Type == this.Type);
             }
             else
             {
-                return false;
+                return (otherPlayer.Name == this.Name) &&
+                (otherPlayer.Type == this.Type);
             }
         }
     }
