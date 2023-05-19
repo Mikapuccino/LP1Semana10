@@ -18,7 +18,7 @@ namespace SamePlayer
 
         public override int GetHashCode()
         {
-            return this.Name ^ this.Type;
+            return this.Name.GetHashCode() ^ this.Type.GetHashCode();
         }
 
         public override bool Equals(Object obj)
@@ -29,7 +29,7 @@ namespace SamePlayer
             }
             else if (obj is Player)
             {
-                return (obj.name == this.name) && (obj.type == this.type);
+                return (obj.Name == this.Name) && (obj.Type == this.Type);
             }
             else
             {
