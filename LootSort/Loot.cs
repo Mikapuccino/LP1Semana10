@@ -48,7 +48,9 @@ namespace LootSort
 
             if ((this.Kind != other.Kind) && (this.Value != other.Value))
             {
-                return this.Kind.CompareTo(other.Kind);
+                string firstKind = this.Kind.ToString();
+                string secondKind = other.Kind.ToString();
+                return firstKind.CompareTo(secondKind);
             }
 
             else if ((this.Kind == other.Kind) && (this.Value != other.Value))
