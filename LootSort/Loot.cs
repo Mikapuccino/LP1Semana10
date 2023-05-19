@@ -4,7 +4,7 @@ namespace LootSort
     /// The Loot class should implement IComparable<Loot>
     /// and override GetHashCode() and Equals()
     /// </summary>
-    public class Loot
+    public class Loot: IComparable<Loot>
     {
         /// <summary>Type of loot.</summary>
         public LootType Kind { get; }
@@ -36,5 +36,22 @@ namespace LootSort
         /// </returns>
         public override string ToString() =>
             $"[{Kind,15}]\t{Value:f2}\t{Description}";
+
+        public int CompareTo(Loot other)
+        {
+            if (other == null) return 1;
+
+            if ((this.Kind != other.Kind) && (this.Value != other.Value))
+            {
+                return this.Kind.CompareTo(other.Kind);
+            }
+
+            else if ((this.Kind == other.Kind) && (this.Value != other.Value))
+            {
+                return other.Value - this.Value;
+            }
+            
+            else return this.Description.CompareTo(other.Description);
+        }
     }
 }
